@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi" style="scroll-behavior: smooth;">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Lusso Saigon | The Vertical Voyage</title>
+  <meta name="description" content="Lusso Saigon - Một kiệt tác vươn cao giữa lòng Sài Gòn. Nơi sự xa hoa đạt đến tầng cao mới và đường chân trời trở thành không gian riêng tư của bạn." />
+  <meta name="keywords" content="Lusso Saigon, Vertial Voyage, Bất động sản cao cấp, Căn hộ Sài Gòn, Luxury Residences" />
+  <link rel="icon" href="./images/favicon.ico" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Lusso Saigon | The Vertical Voyage" />
+  <meta property="og:description" content="Một kiệt tác vươn cao giữa lòng Sài Gòn, nơi sự xa hoa đạt đến tầng cao mới." />
+  <meta property="og:image" content="./images/thumb-lusso.jpg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="./images/thumb-lusso.jpg" />
+  <link rel="canonical" href="https://lussosaigon.com" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateListing",
+      "name": "Lusso Saigon",
+      "description": "Lusso Saigon - Một kiệt tác vươn cao giữa lòng Sài Gòn.",
+      "image": "./images/thumb-lusso.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ho Chi Minh City",
+        "addressCountry": "VN"
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Be+Vietnam+Pro:wght@300;400;600&amp;family=Work+Sans:wght@300;400;500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-secondary": "#3d2f00",
+            "tertiary-fixed": "#ffdcc1",
+            "surface-container-low": "#390a10",
+            "surface": "#2e0309",
+            "surface-bright": "#5f272c",
+            "on-tertiary-fixed": "#2e1500",
+            "on-secondary-fixed": "#241a00",
+            "outline": "#a68a8b",
+            "secondary-fixed": "#ffe08b",
+            "on-error-container": "#ffdad6",
+            "background": "#2e0309",
+            "error": "#ffb4ab",
+            "on-primary-fixed-variant": "#8c132e",
+            "secondary-fixed-dim": "#eac24b",
+            "on-error": "#690005",
+            "tertiary": "#ffb779",
+            "on-tertiary": "#4c2700",
+            "inverse-primary": "#ad2e44",
+            "on-background": "#ffdada",
+            "inverse-surface": "#ffdada",
+            "surface-dim": "#2e0309",
+            "error-container": "#93000a",
+            "inverse-on-surface": "#541f24",
+            "on-surface-variant": "#dfbfc0",
+            "secondary-container": "#af8d14",
+            "tertiary-container": "#6c3a00",
+            "surface-container-high": "#4c191e",
+            "on-secondary-container": "#352800",
+            "on-primary-container": "#ff98a0",
+            "tertiary-fixed-dim": "#ffb779",
+            "outline-variant": "#584142",
+            "surface-tint": "#ffb2b7",
+            "primary-fixed": "#ffdadb",
+            "primary": "#ffb2b7",
+            "on-tertiary-container": "#f4a358",
+            "on-primary-fixed": "#40000e",
+            "on-secondary-fixed-variant": "#584400",
+            "surface-container-lowest": "#270005",
+            "on-tertiary-fixed-variant": "#6c3a00",
+            "surface-variant": "#5a2328",
+            "on-surface": "#ffdada",
+            "on-primary": "#67001c",
+            "secondary": "#eac24b",
+            "surface-container-highest": "#5a2328",
+            "surface-container": "#3e0e14",
+            "primary-fixed-dim": "#ffb2b7"
+          },
+          fontFamily: {
+            "headline": ["Noto Serif"],
+            "body": ["Be Vietnam Pro"],
+            "label": ["Work Sans"]
+          },
+          borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .glass-panel {
+      background: rgba(90, 35, 40, 0.4);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+    }
+
+    .vertical-passage {
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, #eac24b, transparent);
+    }
+
+    .text-glow {
+      text-shadow: 0 0 15px rgba(234, 194, 75, 0.3);
+    }
+
+    /* Reveal Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1.2s cubic-bezier(0.21, 0.6, 0.35, 1), transform 1.2s cubic-bezier(0.21, 0.6, 0.35, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-100 {
+      transition-delay: 100ms;
+    }
+
+    .delay-200 {
+      transition-delay: 200ms;
+    }
+
+    .delay-300 {
+      transition-delay: 300ms;
+    }
+
+    .delay-400 {
+      transition-delay: 400ms;
+    }
+
+    .delay-500 {
+      transition-delay: 500ms;
+    }
+  </style>
+</head>
+
+<body class="bg-background text-on-background font-body selection:bg-secondary selection:text-on-secondary">
+  <!-- TopAppBar -->
+  <nav class="fixed top-0 w-full z-50 bg-stone-950/40 backdrop-blur-2xl shadow-2xl shadow-rose-950/20">
+    <div class="flex justify-between items-center w-full px-12 py-8 max-w-[1920px] mx-auto">
+      <a href="#hero"><img src="./images/logo.png" alt="Lusso Saigon" class="h-10 object-contain" /></a>
+      <div class="hidden md:flex items-center gap-12">
+        <a class="nav-link text-stone-300 font-sans tracking-[0.2em] text-[10px] uppercase hover:text-amber-200 transition-colors duration-500"
+          href="#hero">Về Lusso</a>
+        <a class="nav-link text-stone-300 font-sans tracking-[0.2em] text-[10px] uppercase hover:text-amber-200 transition-colors duration-500"
+          href="#voyage">Hành trình</a>
+        <a class="nav-link text-stone-300 font-sans tracking-[0.2em] text-[10px] uppercase hover:text-amber-200 transition-colors duration-500"
+          href="#differences">Đặc quyền</a>
+        <a class="nav-link text-stone-300 font-sans tracking-[0.2em] text-[10px] uppercase hover:text-amber-200 transition-colors duration-500"
+          href="#timeline">Lịch trình</a>
+      </div>
+      <a href="https://zalo.me/0909364603" target="_blank"
+        class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-3 rounded-none text-xs tracking-widest uppercase font-label scale-98 active:opacity-80 transition-transform inline-block">
+        Nhận báo giá
+      </a>
+    </div>
+  </nav>
+  <main>
+    <!-- Hero: The Vertical Voyage -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img class="w-full h-full object-cover opacity-60"
+          alt="Cinematic architectural rendering of a luxury skyscraper reaching into a dramatic golden hour sky"
+          src="./images/banner.jpg" />
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-surface/60 to-surface"></div>
+      </div>
+      <div class="relative z-10 text-center px-6">
+        <span class="font-label text-secondary tracking-[0.4em] uppercase text-xs mb-6 block opacity-80">WorldHotels
+          Branded Residences</span>
+        <h1 class="font-headline text-7xl text-on-background tracking-tighter leading-none mb-8 italic">
+          Chuyến du hành<br />
+          <span class="text-secondary text-glow">thẳng đứng</span>
+        </h1>
+        <p class="font-body text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto font-light leading-relaxed">
+          Một kiệt tác vươn cao giữa lòng Sài Gòn, nơi sự xa hoa đạt đến tầm cao mới và đường chân trời trở thành không
+          gian riêng tư của bạn.
+        </p>
+        <div class="mt-12 flex flex-col items-center">
+          <div class="vertical-passage h-32 mb-8"></div>
+          <span class="font-label text-[10px] tracking-[0.5em] text-secondary/60 uppercase">Bắt đầu Hành trình</span>
+        </div>
+      </div>
+    </section>
+    <!-- WorldHotels & Branded Residences Section -->
+    <section id="lifestyle" class="py-32 px-12 bg-surface overflow-hidden">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="space-y-4">
+              <img class="w-full aspect-[4/5] object-cover rounded-sm reveal"
+                alt="Grand hotel foyer with crystal chandelier" src="./images/view.jpg" />
+              <img class="w-full aspect-square object-cover rounded-sm reveal delay-200"
+                alt="International diplomatic conference meeting room" src="./images/view-1.jpg" />
+            </div>
+            <div class="space-y-4 pt-12">
+              <img class="w-full aspect-[4/6] object-cover rounded-sm reveal delay-100"
+                alt="High-end lifestyle details, champagne and city view" src="./images/view-2.jpg" />
+              <div class="glass-panel p-6 border-l-2 border-secondary reveal delay-300">
+                <h3 class="font-headline text-lg text-secondary mb-2 italic">Tâm điểm thượng lưu</h3>
+                <p class="font-body text-[10px] text-on-surface-variant leading-relaxed">Nơi những chính khách và tầng
+                  lớp tinh anh hội tụ.</p>
+              </div>
+            </div>
+          </div>
+          <div class="space-y-12">
+            <div class="reveal">
+              <span class="font-label text-secondary tracking-widest uppercase text-xs">WorldHotels Legacy</span>
+              <h2 class="font-headline text-5xl text-on-background leading-tight mt-4">Định hình phong cách<br />sống
+                cao cấp</h2>
+            </div>
+            <div class="space-y-8 text-on-surface-variant font-light reveal delay-200">
+              <p class="leading-relaxed">
+                WorldHotels mang tới đa dạng trải nghiệm độc bản, không chỉ là một không gian sống mà là một hệ sinh
+                thái đặc quyền toàn cầu. Đây là nơi hội tụ của những giá trị di sản và sự tiện nghi đương đại bậc nhất.
+              </p>
+              <div class="grid grid-cols-1 gap-6 pt-4">
+                <div class="flex items-start gap-4 reveal delay-300">
+                  <span class="material-symbols-outlined text-secondary">groups</span>
+                  <div>
+                    <h4 class="text-white font-label text-sm uppercase tracking-wider mb-1">Hội nghị quốc tế</h4>
+                    <p class="text-xs">Nơi diễn ra các hội nghị, sự kiện quốc tế tầm cỡ.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4 reveal delay-400">
+                  <span class="material-symbols-outlined text-secondary">payments</span>
+                  <div>
+                    <h4 class="text-white font-label text-sm uppercase tracking-wider mb-1">Bài toán đầu tư</h4>
+                    <p class="text-xs">Chiến lược đầu tư dòng tiền bền vững với tiềm năng tăng trưởng vượt trội.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Vertical Voyage: The Stations -->
+    <section id="voyage" class="py-32 bg-surface-container-low overflow-hidden">
+      <div class="max-w-[1920px] mx-auto px-12">
+        <div class="text-center mb-20 reveal">
+          <span class="font-label text-secondary tracking-widest uppercase text-xs mb-4 block">Hành trình trải
+            nghiệm</span>
+          <h2 class="font-headline text-6xl text-on-background tracking-tighter italic">Lộ trình du hành thẳng đứng</h2>
+        </div>
+        <!-- Luxury Arrival Experience -->
+        <div class="grid md:grid-cols-4 gap-6 mb-32">
+          <div class="group relative aspect-[3/4] overflow-hidden reveal">
+            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              alt="Grand entrance sảnh đón sang trọng" src="./images/grand-lobby.jpg" />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <span class="material-symbols-outlined text-secondary mb-2">meeting_room</span>
+              <h4 class="font-headline text-lg text-white mb-1">Sảnh đón sang trọng</h4>
+              <p class="text-[10px] text-on-surface-variant font-light">Sự tiếp đãi nồng hậu bậc nhất.</p>
+            </div>
+          </div>
+          <div class="group relative aspect-[3/4] overflow-hidden reveal delay-100">
+            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              alt="Lobby lounge 5 star waiting area" src="./images/grand-lobby-1.jpg" />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <span class="material-symbols-outlined text-secondary mb-2">weekend</span>
+              <h4 class="font-headline text-lg text-white mb-1">Sảnh chờ chuẩn 5*</h4>
+              <p class="text-[10px] text-on-surface-variant font-light">Không gian thư giãn đẳng cấp.</p>
+            </div>
+          </div>
+          <div class="group relative aspect-[3/4] overflow-hidden reveal delay-200">
+            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              alt="High-speed elevator lobby with marble" src="./images/img553.jpg" />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <span class="material-symbols-outlined text-secondary mb-2">elevator</span>
+              <h4 class="font-headline text-lg text-white mb-1">Sảnh thang máy</h4>
+              <p class="text-[10px] text-on-surface-variant font-light">Tốc độ và sự riêng tư tuyệt đối.</p>
+            </div>
+          </div>
+          <div class="group relative aspect-[3/4] overflow-hidden reveal delay-300">
+            <img class="w-full h-full object-cover object-right transition-transform duration-700 group-hover:scale-110"
+              alt="Modern high-end entertainment facility" src="./images/img626.jpg" />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <span class="material-symbols-outlined text-secondary mb-2">sports_esports</span>
+              <h4 class="font-headline text-lg text-white mb-1">Khu vui chơi giải trí</h4>
+              <p class="text-[10px] text-on-surface-variant font-light">Tiện ích hiện đại tích hợp.</p>
+            </div>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-12">
+          <!-- Station 1 -->
+          <div class="group relative overflow-hidden aspect-[4/6] reveal">
+            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+              alt="Luxury commercial retail space interior" src="./images/img682.jpg" />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/20 to-transparent"></div>
+            <div class="absolute bottom-10 left-10 right-10">
+              <span class="font-label text-secondary text-[10px] uppercase tracking-[0.3em]">Trạm 01 (03 Tầng)</span>
+              <h3 class="font-headline text-3xl text-white mt-2 mb-4 italic">THƯƠNG MẠI</h3>
+              <p
+                class="text-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                Tâm điểm mua sắm và dịch vụ cao cấp ngay ngưỡng cửa.</p>
+            </div>
+          </div>
+          <!-- Station 2 -->
+          <div class="group relative overflow-hidden aspect-[4/6] md:translate-y-12 reveal delay-200">
+            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+              alt="Lush green sky garden oasis in a high-rise" src="./images/img608.jpg" />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/20 to-transparent"></div>
+            <div class="absolute bottom-10 left-10 right-10">
+              <span class="font-label text-secondary text-[10px] uppercase tracking-[0.3em]">Trạm 02 (Tầng 20)</span>
+              <h3 class="font-headline text-3xl text-white mt-2 mb-4 italic">TIỆN ÍCH VƯỜN CHÂN MÂY</h3>
+              <p
+                class="text-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                Trong sang, ngoài vẫn xanh - ốc đảo treo giữa lòng phố thị.</p>
+            </div>
+          </div>
+          <!-- Station 3 -->
+          <div class="group relative overflow-hidden aspect-[4/6] md:translate-y-24 reveal delay-400">
+            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+              alt="Rooftop infinity pool with skyline view" src="./images/img630.jpg" />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/20 to-transparent"></div>
+            <div class="absolute bottom-10 left-10 right-10">
+              <span class="font-label text-secondary text-[10px] uppercase tracking-[0.3em]">Trạm 03 (Tầng Mái)</span>
+              <h3 class="font-headline text-3xl text-white mt-2 mb-4 italic">TIỆN ÍCH GIỮA TẦNG KHÔNG</h3>
+              <p
+                class="text-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                Đô thị All-in-one - Tận hưởng đặc quyền sống trên đỉnh cao.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- All-in-one Themes & Differentiators -->
+    <section id="all-in-one" class="py-48 px-12 bg-surface">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-start">
+        <div class="space-y-24">
+          <div class="grid grid-cols-2 gap-4">
+            <img class="w-full aspect-square object-cover rounded-sm border border-outline-variant/30 reveal"
+              alt="Minimalist luxury bedroom interior" src="./images/img691.jpg" />
+            <img
+              class="w-full aspect-square object-cover rounded-sm border border-outline-variant/30 mt-8 reveal delay-200"
+              alt="Vertical greenery on high-rise facade" src="./images/img690.jpg" />
+            <div class="col-span-2 reveal">
+              <h2 class="font-headline text-5xl text-on-background italic mb-6">Trong sang,<br />ngoài vẫn xanh</h2>
+              <p class="font-body text-on-surface-variant font-light leading-relaxed">
+                Một sự giao thoa hoàn hảo giữa nội thất tinh khiết và mảng xanh thẳng đứng, mang hơi thở thiên nhiên vào
+                từng ngóc ngách của căn hộ.
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4 pt-8 border-t border-outline-variant/30">
+            <div class="col-span-2 reveal">
+              <h2 class="font-headline text-5xl text-on-background italic mb-6">Đô thị All-in-one</h2>
+              <p class="font-body text-on-surface-variant font-light leading-relaxed">
+                Mọi nhu cầu từ làm việc, giải trí đến chăm sóc sức khỏe đều được đáp ứng ngay trong tòa tháp, tạo nên
+                một tiểu đô thị thượng lưu khép kín.
+              </p>
+            </div>
+            <img class="w-full aspect-[4/3] object-cover rounded-sm border border-outline-variant/30 reveal delay-100"
+              alt="Smart city urban connectivity view" src="./images/img703.jpg" />
+            <img class="w-full aspect-[4/3] object-cover rounded-sm border border-outline-variant/30 reveal delay-300"
+              alt="Luxury spa and wellness center" src="./images/img715.jpg" />
+          </div>
+        </div>
+        <div class="grid grid-cols-1 gap-12 sticky top-32">
+          <div class="space-y-4 reveal">
+            <span class="text-secondary font-headline text-2xl italic">01.</span>
+            <h4 class="font-label text-sm uppercase tracking-widest text-white">Thác nước cổng chào & Công viên xanh
+            </h4>
+            <p class="font-body text-xs text-on-surface-variant leading-relaxed">Không gian chào đón ấn tượng với thác
+              nước nghệ thuật kết hợp công viên xanh mát, tạo cảm giác thư giãn ngay từ bước chân đầu tiên.</p>
+          </div>
+          <div class="space-y-4 reveal delay-100">
+            <span class="text-secondary font-headline text-2xl italic">02.</span>
+            <h4 class="font-label text-sm uppercase tracking-widest text-white">Lõi xanh cảnh quan</h4>
+            <p class="font-body text-xs text-on-surface-variant leading-relaxed">Khu lõi xanh rộng lớn với cây xanh và
+              đường dạo bộ, mang đến môi trường sống trong lành và cân bằng giữa thiên nhiên và đô thị.</p>
+          </div>
+          <div class="space-y-4 reveal delay-200">
+            <span class="text-secondary font-headline text-2xl italic">03.</span>
+            <h4 class="font-label text-sm uppercase tracking-widest text-white">San chơi nước trẻ em</h4>
+            <p class="font-body text-xs text-on-surface-variant leading-relaxed">Khu vui chơi nước an toàn và sinh động
+              dành cho trẻ em, giúp bé phát triển thể chất và tận hưởng những khoảnh khắc vui vẻ mỗi ngày.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Absolute Differences Section -->
+    <section id="differences" class="py-32 bg-surface-container-low border-y border-outline-variant/20 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-12">
+        <div class="text-center mb-24 reveal">
+          <span class="font-label text-secondary tracking-[0.5em] uppercase text-xs mb-4 block">The Lusso
+            Difference</span>
+          <h2 class="font-headline text-6xl text-on-background tracking-tighter italic">Những điểm khác biệt tuyệt đối
+          </h2>
+          <div class="vertical-passage h-12 mx-auto mt-10"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-24">
+
+          <!-- 01 -->
+          <div class="group reveal">
+            <div
+              class="mb-8 relative w-20 h-20 flex items-center justify-center border border-secondary/30 rounded-full transition-all duration-500 group-hover:bg-secondary/10 group-hover:border-secondary">
+              <span class="material-symbols-outlined text-4xl text-secondary">hotel</span>
+              <span class="absolute -top-1 -right-1 font-headline text-xs italic text-secondary">01</span>
+            </div>
+            <h3
+              class="font-label text-white uppercase tracking-widest mb-4 group-hover:text-secondary transition-colors">
+              Chuẩn sống khách sạn 5 sao
+            </h3>
+            <p class="font-body text-sm text-on-surface-variant leading-relaxed font-light">
+              Không gian sống đẳng cấp quốc tế, vận hành bởi WorldHotels – thương hiệu Branded Residences danh tiếng
+              toàn cầu.
+            </p>
+          </div>
+
+          <!-- 02 -->
+          <div class="group reveal delay-100">
+            <div
+              class="mb-8 relative w-20 h-20 flex items-center justify-center border border-secondary/30 rounded-full transition-all duration-500 group-hover:bg-secondary/10 group-hover:border-secondary">
+              <span class="material-symbols-outlined text-4xl text-secondary">location_city</span>
+              <span class="absolute -top-1 -right-1 font-headline text-xs italic text-secondary">02</span>
+            </div>
+            <h3
+              class="font-label text-white uppercase tracking-widest mb-4 group-hover:text-secondary transition-colors">
+              Vị trí kết nối chiến lược
+            </h3>
+            <p class="font-body text-sm text-on-surface-variant leading-relaxed font-light">
+              Mặt tiền đại lộ mới, kết nối nhanh về trung tâm chỉ 25 phút và liền kề tuyến metro hiện đại.
+            </p>
+          </div>
+
+          <!-- 03 -->
+          <div class="group reveal delay-200">
+            <div
+              class="mb-8 relative w-20 h-20 flex items-center justify-center border border-secondary/30 rounded-full transition-all duration-500 group-hover:bg-secondary/10 group-hover:border-secondary">
+              <span class="material-symbols-outlined text-4xl text-secondary">apartment</span>
+              <span class="absolute -top-1 -right-1 font-headline text-xs italic text-secondary">03</span>
+            </div>
+            <h3
+              class="font-label text-white uppercase tracking-widest mb-4 group-hover:text-secondary transition-colors">
+              Đô thị all-in-one
+            </h3>
+            <p class="font-body text-sm text-on-surface-variant leading-relaxed font-light">
+              Hệ sinh thái tiện ích đầy đủ: thương mại, giải trí, y tế, giáo dục… ngay dưới chân nhà.
+            </p>
+          </div>
+
+          <!-- 04 -->
+          <div class="group reveal delay-300">
+            <div
+              class="mb-8 relative w-20 h-20 flex items-center justify-center border border-secondary/30 rounded-full transition-all duration-500 group-hover:bg-secondary/10 group-hover:border-secondary">
+              <span class="material-symbols-outlined text-4xl text-secondary">shopping_bag</span>
+              <span class="absolute -top-1 -right-1 font-headline text-xs italic text-secondary">04</span>
+            </div>
+            <h3
+              class="font-label text-white uppercase tracking-widest mb-4 group-hover:text-secondary transition-colors">
+              Trung tâm thương mại riêng
+            </h3>
+            <p class="font-body text-sm text-on-surface-variant leading-relaxed font-light">
+              Sở hữu Lusso Plaza ngay khối đế – trải nghiệm mua sắm và dịch vụ cao cấp mỗi ngày.
+            </p>
+          </div>
+
+          <!-- 05 -->
+          <div class="group reveal delay-400">
+            <div
+              class="mb-8 relative w-20 h-20 flex items-center justify-center border border-secondary/30 rounded-full transition-all duration-500 group-hover:bg-secondary/10 group-hover:border-secondary">
+              <span class="material-symbols-outlined text-4xl text-secondary">park</span>
+              <span class="absolute -top-1 -right-1 font-headline text-xs italic text-secondary">05</span>
+            </div>
+            <h3
+              class="font-label text-white uppercase tracking-widest mb-4 group-hover:text-secondary transition-colors">
+              Không gian sống xanh biophilic
+            </h3>
+            <p class="font-body text-sm text-on-surface-variant leading-relaxed font-light">
+              Thiết kế gần gũi thiên nhiên, mang đến môi trường sống trong lành giữa lòng đô thị.
+            </p>
+          </div>
+
+          <!-- 06 -->
+          <div class="group reveal delay-500">
+            <div
+              class="mb-8 relative w-20 h-20 flex items-center justify-center border border-secondary/30 rounded-full transition-all duration-500 group-hover:bg-secondary/10 group-hover:border-secondary">
+              <span class="material-symbols-outlined text-4xl text-secondary">groups</span>
+              <span class="absolute -top-1 -right-1 font-headline text-xs italic text-secondary">06</span>
+            </div>
+            <h3
+              class="font-label text-white uppercase tracking-widest mb-4 group-hover:text-secondary transition-colors">
+              Cộng đồng quốc tế
+            </h3>
+            <p class="font-body text-sm text-on-surface-variant leading-relaxed font-light">
+              Chuẩn sống toàn cầu với cộng đồng cư dân đa quốc gia: Nhật, Hàn, Âu, Mỹ.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- The Asset of a Generation Section -->
+    <section id="asset" class="py-32 bg-surface-container overflow-hidden">
+      <div class="max-w-7xl mx-auto px-12">
+        <div class="flex flex-col lg:flex-row items-center gap-20">
+          <div class="w-full lg:w-1/2 space-y-12 reveal">
+            <div>
+              <span class="font-label text-secondary tracking-[0.4em] uppercase text-xs mb-4 block">Tiềm năng sinh
+                lời</span>
+              <h2 class="font-headline text-6xl text-on-background tracking-tighter leading-tight italic">
+                The Asset of<br />a Generation
+              </h2>
+              <p class="mt-8 font-body text-lg text-on-surface-variant font-light leading-relaxed">
+                Lusso Saigon không chỉ là một dinh thự trên không, mà là một di sản đầu tư bền vững. Một tài sản truyền
+                đời mang giá trị biểu tượng, khẳng định vị thế và tầm nhìn của chủ nhân trong dòng chảy của thời gian.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+              <div class="border-l border-secondary/30 pl-6 py-2 reveal delay-100">
+                <span class="block text-secondary font-headline text-3xl mb-1 italic">~12% / Năm</span>
+                <h4 class="font-label text-[10px] text-white uppercase tracking-widest">Estimated Capital Growth</h4>
+                <p class="text-[10px] text-on-surface-variant mt-2 font-light">Tiềm năng tăng giá trị tài sản vượt bậc
+                  theo thời gian.</p>
+              </div>
+              <div class="border-l border-secondary/30 pl-6 py-2 reveal delay-200">
+                <span class="block text-secondary font-headline text-3xl mb-1 italic">92%+</span>
+                <h4 class="font-label text-[10px] text-white uppercase tracking-widest">High Occupancy Target</h4>
+                <p class="text-[10px] text-on-surface-variant mt-2 font-light">Tỉ lệ lấp đầy tối ưu nhờ thương hiệu
+                  WorldHotels vận hành.</p>
+              </div>
+              <div class="border-l border-secondary/30 pl-6 py-2 reveal delay-300">
+                <span class="block text-secondary font-headline text-3xl mb-1 italic">6-7% / Năm</span>
+                <h4 class="font-label text-[10px] text-white uppercase tracking-widest">Rental Appeal</h4>
+                <p class="text-[10px] text-on-surface-variant mt-2 font-light">Tỉ suất cho thuê cao nhất cả nước.</p>
+              </div>
+              <div class="border-l border-secondary/30 pl-6 py-2 reveal delay-300">
+                <span class="block text-secondary font-headline text-3xl mb-1 italic">50.000+</span>
+                <h4 class="font-label text-[10px] text-white uppercase tracking-widest">Global Citizen</h4>
+                <p class="text-[10px] text-on-surface-variant mt-2 font-light">Khoảng 50.000 chuyên gia đang sinh sống &
+                  làm việc gần Lusso Saigon, tạo nguồn cầu thuê ổn định.</p>
+              </div>
+            </div>
+          </div>
+          <div class="w-full lg:w-1/2 relative reveal delay-200">
+            <div class="relative z-10 aspect-[4/5] overflow-hidden rounded-sm">
+              <img class="w-full h-full object-cover"
+                alt="Sophisticated architectural model and financial planning on high-end marble desk"
+                src="./images/img692.jpg" />
+              <div class="absolute inset-0 bg-gradient-to-tr from-surface/40 to-transparent mix-blend-multiply"></div>
+            </div>
+            <div class="absolute -bottom-10 -left-10 w-48 h-48 border border-secondary/20 -z-0"></div>
+            <div class="absolute -top-10 -right-10 w-64 h-64 bg-secondary/5 rounded-full blur-3xl -z-0"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Implementation Timeline -->
+    <section id="timeline" class="py-32 px-12 bg-surface-container-lowest relative overflow-hidden">
+      <!-- Background accents -->
+      <div class="absolute top-0 right-0 w-1/3 h-full opacity-5 pointer-events-none">
+        <img class="w-full h-full object-cover" alt="Subtle rendering of architectural blueprints"
+          src="./images/img1319.jpg" />
+      </div>
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-24 reveal">
+          <h2 class="font-headline text-5xl text-on-background mb-4 italic">Kế hoạch triển khai</h2>
+          <div class="vertical-passage h-16 mx-auto mt-8"></div>
+        </div>
+        <div class="relative">
+          <div class="absolute left-1/2 top-0 bottom-0 w-[1px] bg-outline-variant/20 -translate-x-1/2 hidden md:block">
+          </div>
+          <div class="space-y-32">
+            <!-- Step 1 -->
+            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-0 reveal">
+              <div class="md:w-1/2 md:pr-24 md:text-right">
+                <span class="font-label text-secondary text-xs uppercase tracking-widest">Từ 03/03</span>
+                <h3 class="font-headline text-2xl text-white mt-2 italic">Chuỗi đào tạo chuyên sâu</h3>
+                <p class="text-on-surface-variant text-sm mt-4 font-light">Chương trình đào tạo đội ngũ tư vấn chuyên
+                  nghiệp về dự án.</p>
+              </div>
+              <div class="relative z-10 w-4 h-4 rounded-full bg-secondary shadow-[0_0_15px_rgba(234,194,75,0.6)]"></div>
+              <div class="md:w-1/2 md:pl-24">
+                <img
+                  class="w-full h-32 object-cover grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all rounded-sm"
+                  alt="Team training session" src="./images/img1309.jpg" />
+              </div>
+            </div>
+            <!-- Step 2 -->
+            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-0 reveal">
+              <div class="md:w-1/2 md:pr-24">
+                <img
+                  class="w-full h-32 object-cover grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all rounded-sm"
+                  alt="Official signing ceremony" src="./images/img1273.jpg" />
+              </div>
+              <div class="relative z-10 w-4 h-4 rounded-full bg-secondary/60"></div>
+              <div class="md:w-1/2 md:pl-24">
+                <span class="font-label text-secondary text-xs uppercase tracking-widest">18/03</span>
+                <h3 class="font-headline text-2xl text-white mt-2 italic">Sự kiện 3-in-1</h3>
+                <p class="text-on-surface-variant text-sm mt-4 font-light">Lễ Kick-off, ký kết và chính thức nhận
+                  Booking vào CĐT.</p>
+              </div>
+            </div>
+            <!-- Step 3 -->
+            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-0 reveal">
+              <div class="md:w-1/2 md:pr-24 md:text-right">
+                <span class="font-label text-secondary text-xs uppercase tracking-widest">23/03</span>
+                <h3 class="font-headline text-2xl text-white mt-2 italic">Khai trương VPBH &amp; Nhà mẫu</h3>
+                <p class="text-on-surface-variant text-sm mt-4 font-light">Mở cửa đón khách tham quan căn hộ mẫu 3 phòng
+                  ngủ sang trọng.</p>
+              </div>
+              <div class="relative z-10 w-4 h-4 rounded-full bg-secondary/60"></div>
+              <div class="md:w-1/2 md:pl-24">
+                <img
+                  class="w-full h-32 object-cover grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all rounded-sm"
+                  alt="Sales gallery and model unit photo" src="./images/img310.jpg" />
+              </div>
+            </div>
+            <!-- Step 4 -->
+            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-0 reveal">
+              <div class="md:w-1/2 md:pr-24">
+                <img
+                  class="w-full h-32 object-cover grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all rounded-sm"
+                  alt="Booking event" src="./images/img1285.jpg" />
+              </div>
+              <div class="relative z-10 w-4 h-4 rounded-full bg-secondary/60"></div>
+              <div class="md:w-1/2 md:pl-24">
+                <span class="font-label text-secondary text-xs uppercase tracking-widest">Trong T3</span>
+                <h3 class="font-headline text-2xl text-white mt-2 italic">Chuỗi sự kiện gom booking</h3>
+                <p class="text-on-surface-variant text-sm mt-4 font-light">
+                  Tổ chức các sự kiện giới thiệu dự án, thu hút khách hàng và gia tăng lượng booking.
+                </p>
+              </div>
+            </div>
+            <!-- Step 5 -->
+            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-0 reveal">
+              <div class="md:w-1/2 md:pr-24 md:text-right">
+                <span class="font-label text-secondary text-xs uppercase tracking-widest">W4 / T3</span>
+                <h3 class="font-headline text-2xl text-white mt-2 italic">Mở bán & ký thủ tục</h3>
+                <p class="text-on-surface-variant text-sm mt-4 font-light">
+                  Chính thức mở bán, tiến hành ký kết hợp đồng và hoàn tất các thủ tục mua bán.
+                </p>
+              </div>
+              <div class="relative z-10 w-4 h-4 rounded-full bg-secondary/60"></div>
+              <div class="md:w-1/2 md:pl-24">
+                <img
+                  class="w-full h-32 object-cover grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all rounded-sm"
+                  alt="Sales launch event" src="./images/img1254.jpg" />
+              </div>
+            </div>
+            <!-- Step 6 -->
+            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-0 reveal">
+              <div class="md:w-1/2 md:pr-24">
+                <img
+                  class="w-full h-32 object-cover grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all rounded-sm"
+                  alt="Marketing and support" src="./images/img1353.jpg" />
+              </div>
+              <div class="relative z-10 w-4 h-4 rounded-full bg-secondary/60"></div>
+              <div class="md:w-1/2 md:pl-24">
+                <span class="font-label text-secondary text-xs uppercase tracking-widest">T5 - T6</span>
+                <h3 class="font-headline text-2xl text-white mt-2 italic">
+                  Direct MKT & hỗ trợ đại lý
+                </h3>
+                <p class="text-on-surface-variant text-sm mt-4 font-light">
+                  Đẩy mạnh marketing trực tiếp, hỗ trợ đại lý bán hàng và tổ chức sự kiện tại VPBH.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- The La Pura Signature -->
+    <section id="signature" class="relative min-h-screen flex items-center justify-center py-32 px-12 overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img class="w-full h-full object-cover opacity-40"
+          alt="Ethereal lifestyle image capturing high-end living philosophy"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTdk95e3iGcAZgxw8wGirjeSLwm83yJFGDMrNbrw72ZzGDWU_5aNEZ2TC1cqFdb1saprnkR8n_VPK5K_B6SOeJ5ADPfc2_bjzOJ34-87on4hcAV1JmlmOcrzHMW9MMFwsNHJgGWTSGILn0ZTYsGCcuFNgtCQv3pIS4uTwJbVpaWHxFE_gqFICkVfRwse1VmHSciUtWkFS73YMHZXdEk5MlYm0pCkERWpQuhb5o2gEAqwQ4On9-4JyXehhvpuW1TtMs2w4HBgJD4t8" />
+        <div class="absolute inset-0 bg-surface/70 mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background"></div>
+      </div>
+      <div class="relative z-10 max-w-4xl text-center">
+        <div class="reveal">
+          <span class="font-label text-secondary tracking-[0.5em] uppercase text-xs mb-8 block">The Philosophy</span>
+          <h2 class="font-headline text-7xl md:text-9xl text-on-background tracking-tighter mb-12 italic">Dấu ấn
+            <br /><span class="text-secondary text-glow">La Pura</span>
+          </h2>
+        </div>
+        <p
+          class="font-body text-xl text-on-surface-variant max-w-2xl mx-auto font-light leading-relaxed mb-16 italic reveal delay-200">
+          "A return to purity. A life stripped of the mundane, leaving only the essential luxury of time, light, and
+          silence."
+        </p>
+        <div class="reveal delay-400">
+          <a href="https://drive.google.com/drive/folders/1Z74UqnrZuHoZHWN49lgdVPRVFNFo-MhO" target="_blank"
+            class="bg-transparent border border-secondary text-secondary px-12 py-5 font-label uppercase tracking-widest text-xs hover:bg-secondary hover:text-on-secondary transition-all inline-block">
+            Pháp lý dự án
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-stone-950 w-full py-24 px-12 border-t border-rose-900/10">
+    <div class="flex flex-col md:flex-row justify-between items-end gap-12 w-full max-w-7xl mx-auto">
+      <div class="space-y-8 w-full md:w-auto">
+        <img src="./images/logo.png" alt="Lusso Saigon" class="h-16 object-contain" />
+        <!-- <div class="flex flex-wrap gap-8">
+          <a class="text-stone-500 font-sans tracking-widest text-xs uppercase hover:text-rose-300 transition-all duration-300"
+            href="#">Privacy</a>
+          <a class="text-stone-500 font-sans tracking-widest text-xs uppercase hover:text-rose-300 transition-all duration-300"
+            href="#">Sustainability</a>
+          <a class="text-stone-500 font-sans tracking-widest text-xs uppercase hover:text-rose-300 transition-all duration-300"
+            href="#">Press</a>
+          <a class="text-stone-500 font-sans tracking-widest text-xs uppercase hover:text-rose-300 transition-all duration-300"
+            href="#">Developer</a>
+        </div> -->
+      </div>
+      <div class="text-right space-y-4">
+        <p class="font-serif text-sm italic text-stone-500">© 2026 Lusso Saigon. A Vertical Voyage by WorldHotels.</p>
+        <div class="flex justify-end gap-6 text-amber-400">
+          <a href="tel:0909364603"><span class="material-symbols-outlined cursor-pointer hover:scale-110 transition-transform" title="Gọi điện">call</span></a>
+          <a href="https://zalo.me/0909364603" target="_blank"><span class="material-symbols-outlined cursor-pointer hover:scale-110 transition-transform" title="Zalo">chat</span></a>
+          <a href="mailto:caonguyenthuthao630@gmail.com"><span class="material-symbols-outlined cursor-pointer hover:scale-110 transition-transform" title="Email">mail</span></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            // Once visible, we can unobserve if we want it to stay
+            // observer.unobserve(entry.target); 
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.reveal').forEach(el => {
+        observer.observe(el);
+      });
+
+      // Active Nav Link on Scroll
+      const navLinks = document.querySelectorAll('.nav-link');
+      const sections = document.querySelectorAll('section[id]');
+      const navMapping = {
+        'hero': '#hero',
+        'lifestyle': '#hero',
+        'voyage': '#voyage',
+        'all-in-one': '#differences',
+        'differences': '#differences',
+        'asset': '#differences',
+        'timeline': '#timeline',
+        'signature': '#timeline'
+      };
+
+      const updateActiveNav = () => {
+        let currentSectionId = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          if (window.pageYOffset >= sectionTop - 200) {
+            currentSectionId = section.getAttribute('id');
+          }
+        });
+
+        const targetHref = navMapping[currentSectionId] || '';
+
+        navLinks.forEach(link => {
+          link.classList.remove('text-amber-400', 'border-b', 'border-amber-400/50', 'pb-1');
+          link.classList.add('text-stone-300');
+          if (link.getAttribute('href') === targetHref) {
+            link.classList.add('text-amber-400', 'border-b', 'border-amber-400/50', 'pb-1');
+            link.classList.remove('text-stone-300');
+          }
+        });
+      };
+
+      window.addEventListener('scroll', updateActiveNav);
+      updateActiveNav(); // Run once on load
+    });
+  </script>
+</body>
+
+</html>
