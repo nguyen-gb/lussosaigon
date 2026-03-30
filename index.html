@@ -153,6 +153,74 @@
     .delay-500 {
       transition-delay: 500ms;
     }
+
+    /* Fixed Contact Buttons */
+    .fixed-contact {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-btn {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+    }
+
+    .contact-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 48px rgba(234, 194, 75, 0.3);
+    }
+
+    .contact-btn.call {
+      background: linear-gradient(135deg, #eac24b, #af8d14);
+      color: #3d2f00;
+    }
+
+    .contact-btn.zalo {
+      background: linear-gradient(135deg, #2196F3, #1976D2);
+      color: white;
+    }
+
+    @keyframes ring {
+      0% { transform: rotate(0deg) scale(1); }
+      5% { transform: rotate(15deg) scale(1.1); }
+      10% { transform: rotate(-15deg) scale(1.1); }
+      15% { transform: rotate(15deg) scale(1.1); }
+      20% { transform: rotate(-15deg) scale(1.1); }
+      25% { transform: rotate(0deg) scale(1.1); }
+      100% { transform: rotate(0deg) scale(1.1); }
+    }
+
+    .ring-anim {
+      animation: ring 2s ease-in-out infinite;
+    }
+
+    /* Pulse effect around button */
+    .contact-btn::before {
+      content: "";
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 2px solid currentColor;
+      opacity: 0.5;
+      animation: pulse-out 2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+    }
+
+    @keyframes pulse-out {
+      0% { transform: scale(1); opacity: 0.8; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
   </style>
 </head>
 
@@ -165,9 +233,13 @@
         <a class="nav-link text-stone-300 font-sans tracking-[0.2em] text-[10px] uppercase hover:text-amber-200 transition-colors duration-500"
           href="#hero">Về Lusso</a>
         <a class="nav-link text-stone-300 font-sans tracking-[0.2em] text-[10px] uppercase hover:text-amber-200 transition-colors duration-500"
+          href="#location">Vị trí</a>
+        <a class="nav-link text-stone-300 font-sans tracking-[0.2em] text-[10px] uppercase hover:text-amber-200 transition-colors duration-500"
           href="#voyage">Hành trình</a>
         <a class="nav-link text-stone-300 font-sans tracking-[0.2em] text-[10px] uppercase hover:text-amber-200 transition-colors duration-500"
           href="#model-house">Nhà mẫu</a>
+        <a class="nav-link text-stone-300 font-sans tracking-[0.2em] text-[10px] uppercase hover:text-amber-200 transition-colors duration-500"
+          href="#floor-plan">Mặt bằng</a>
         <a class="nav-link text-stone-300 font-sans tracking-[0.2em] text-[10px] uppercase hover:text-amber-200 transition-colors duration-500"
           href="#progress">Tiến độ</a>
       </div>
@@ -252,6 +324,82 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VỊ TRÍ CHIẾN LƯỢC -->
+    <section id="location" class="py-32 px-12 bg-surface-container-low overflow-hidden">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-20 items-center">
+          <div class="space-y-12 reveal">
+            <div>
+              <span class="font-label text-secondary tracking-[0.5em] uppercase text-xs mb-4 block">Central Connectivity</span>
+              <h2 class="font-headline text-6xl text-on-background tracking-tighter italic">Vị trí chiến lược</h2>
+              <div class="vertical-passage h-12 mt-10"></div>
+            </div>
+            <div class="space-y-8">
+              <p class="font-body text-lg text-on-surface-variant font-light leading-relaxed">
+                Tọa lạc tại tâm điểm giao thoa giữa các trục đại lộ huyết mạch, Lusso Saigon sở hữu vị thế độc bản kết nối trực tiếp đến mọi khu vực trọng điểm của thành phố trong tích tắc.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div class="flex items-center gap-4 group">
+                  <div class="w-12 h-12 rounded-full border border-secondary/30 flex items-center justify-center group-hover:bg-secondary/10 transition-colors">
+                    <span class="material-symbols-outlined text-secondary">explore</span>
+                  </div>
+                  <div>
+                    <h4 class="text-white font-label text-xs uppercase tracking-widest">Trung tâm Quận 1</h4>
+                    <p class="text-[10px] text-on-surface-variant">Chỉ 25 Phút di chuyển</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4 group">
+                  <div class="w-12 h-12 rounded-full border border-secondary/30 flex items-center justify-center group-hover:bg-secondary/10 transition-colors">
+                    <span class="material-symbols-outlined text-secondary">train</span>
+                  </div>
+                  <div>
+                    <h4 class="text-white font-label text-xs uppercase tracking-widest">Tuyến Metro số 2</h4>
+                    <p class="text-[10px] text-on-surface-variant">Kết nối nhanh chóng</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4 group">
+                  <div class="w-12 h-12 rounded-full border border-secondary/30 flex items-center justify-center group-hover:bg-secondary/10 transition-colors">
+                    <span class="material-symbols-outlined text-secondary">flight_takeoff</span>
+                  </div>
+                  <div>
+                    <h4 class="text-white font-label text-xs uppercase tracking-widest">Sân bay Tân Sơn Nhất</h4>
+                    <p class="text-[10px] text-on-surface-variant">Tiếp cận dễ dàng</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4 group">
+                  <div class="w-12 h-12 rounded-full border border-secondary/30 flex items-center justify-center group-hover:bg-secondary/10 transition-colors">
+                    <span class="material-symbols-outlined text-secondary">shopping_cart</span>
+                  </div>
+                  <div>
+                    <h4 class="text-white font-label text-xs uppercase tracking-widest">Tiện ích ngoại khu</h4>
+                    <p class="text-[10px] text-on-surface-variant">Trong bán kính 2km</p>
+                  </div>
+                </div>
+              </div>
+              <div class="pt-8">
+                <a href="https://maps.app.goo.gl/8qAaznfQzZ8624WU9" target="_blank"
+                  class="inline-flex items-center gap-3 bg-transparent border border-secondary text-secondary px-10 py-4 font-label uppercase tracking-widest text-xs hover:bg-secondary hover:text-on-secondary transition-all">
+                  <span class="material-symbols-outlined">location_on</span>
+                  Xem trên Google Maps
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="relative reveal delay-200">
+            <div class="glass-panel p-2 rounded-sm overflow-hidden border border-outline-variant/30 relative">
+              <img class="w-full h-auto object-cover rounded-sm" alt="Bản đồ vị trí Lusso Saigon" 
+                   src="./images/vi-tri-lusso-saigon-1536x863.webp">
+              <!-- Accent pulse on the map if appropriate - visually simulated with CSS -->
+              <div class="absolute top-[34%] right-[20%] -translate-x-1/2 -translate-y-1/2 w-8 h-8 pointer-events-none">
+                 <div class="absolute inset-0 bg-secondary rounded-full animate-ping opacity-70"></div>
+              </div>
+            </div>
+            <div class="absolute -bottom-10 -right-10 w-48 h-48 border-r border-b border-secondary/20 -z-0"></div>
           </div>
         </div>
       </div>
@@ -613,6 +761,100 @@
       </div>
     </section>
 
+    <!-- MẶT BẰNG TẦNG -->
+    <section id="floor-plan" class="py-32 px-12 bg-surface-container-low overflow-hidden">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-24 reveal">
+          <span class="font-label text-secondary tracking-[0.5em] uppercase text-xs mb-4 block">Apartment Layouts</span>
+          <h2 class="font-headline text-5xl text-on-background mb-4 italic">MẶT BẰNG CĂN HỘ</h2>
+          <div class="vertical-passage h-12 mx-auto mt-10"></div>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="flex flex-wrap justify-center gap-4 mb-16 reveal">
+          <button onclick="switchTab('1pn')" id="tab-1pn"
+            class="tab-btn active px-8 py-3 font-label text-xs tracking-widest uppercase border border-secondary/30 transition-all duration-500 hover:bg-secondary/10">1PN</button>
+          <button onclick="switchTab('2pn')" id="tab-2pn"
+            class="tab-btn px-8 py-3 font-label text-xs tracking-widest uppercase border border-secondary/30 transition-all duration-500 hover:bg-secondary/10">2PN</button>
+          <button onclick="switchTab('3pn')" id="tab-3pn"
+            class="tab-btn px-8 py-3 font-label text-xs tracking-widest uppercase border border-secondary/30 transition-all duration-500 hover:bg-secondary/10">3PN</button>
+          <button onclick="switchTab('4pn')" id="tab-4pn"
+            class="tab-btn px-8 py-3 font-label text-xs tracking-widest uppercase border border-secondary/30 transition-all duration-500 hover:bg-secondary/10">4PN</button>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="max-w-5xl mx-auto reveal delay-200">
+          <!-- 1PN -->
+          <div id="content-1pn" class="tab-content block">
+            <div class="relative group aspect-video overflow-hidden rounded-sm border border-outline-variant/20 bg-stone-900/40">
+              <img class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700" alt="Mặt bằng 1 phòng ngủ" 
+                   src="./images/can-ho-lusso-saigon-1pn-1536x864.webp">
+            </div>
+            <div class="mt-8 text-center">
+              <h4 class="font-headline text-2xl text-secondary italic">Căn hộ 1 Phòng Ngủ</h4>
+              <p class="text-xs text-on-surface-variant mt-2 font-light tracking-wider">Không gian sống tinh khôi và tối giản cho nhịp sống hiện đại.</p>
+            </div>
+          </div>
+
+          <!-- 2PN -->
+          <div id="content-2pn" class="tab-content hidden">
+            <div class="grid md:grid-cols-2 gap-8">
+              <div class="space-y-4">
+                <div class="aspect-video overflow-hidden rounded-sm border border-outline-variant/20 bg-stone-900/40">
+                  <img class="w-full h-full object-contain p-4 hover:scale-105 transition-transform duration-700" alt="Mặt bằng 2 phòng ngủ 1WC" 
+                       src="./images/can-ho-lusso-saigon-2pn-1wc-768x432.webp">
+                </div>
+                <p class="text-center text-[10px] uppercase tracking-widest text-secondary font-label">Phiên bản 01 (1WC)</p>
+              </div>
+              <div class="space-y-4">
+                <div class="aspect-video overflow-hidden rounded-sm border border-outline-variant/20 bg-stone-900/40">
+                  <img class="w-full h-full object-contain p-4 hover:scale-105 transition-transform duration-700" alt="Mặt bằng 2 phòng ngủ 2WC" 
+                       src="./images/can-ho-lusso-saigon-2pn-2wc-768x432.webp">
+                </div>
+                <p class="text-center text-[10px] uppercase tracking-widest text-secondary font-label">Phiên bản 02 (2WC)</p>
+              </div>
+            </div>
+            <div class="mt-12 text-center">
+              <h4 class="font-headline text-2xl text-secondary italic">Căn hộ 2 Phòng Ngủ</h4>
+              <p class="text-xs text-on-surface-variant mt-2 font-light tracking-wider">Sự cân bằng hoàn hảo giữa riêng tư và gắn kết gia đình.</p>
+            </div>
+          </div>
+
+          <!-- 3PN -->
+          <div id="content-3pn" class="tab-content hidden">
+            <div class="relative group aspect-video overflow-hidden rounded-sm border border-outline-variant/20 bg-stone-900/40">
+              <img class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700" alt="Mặt bằng 3 phòng ngủ" 
+                   src="./images/can-ho-lusso-saigon-3pn-1536x864.webp">
+            </div>
+            <div class="mt-8 text-center">
+              <h4 class="font-headline text-2xl text-secondary italic">Căn hộ 3 Phòng Ngủ</h4>
+              <p class="text-xs text-on-surface-variant mt-2 font-light tracking-wider">Định nghĩa lại không gian sống đẳng cấp cho gia đình đa thế hệ.</p>
+            </div>
+          </div>
+
+          <!-- 4PN -->
+          <div id="content-4pn" class="tab-content hidden">
+            <div class="relative group aspect-video overflow-hidden rounded-sm border border-outline-variant/20 bg-stone-900/40">
+              <img class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700" alt="Mặt bằng 4 phòng ngủ" 
+                   src="./images/can-ho-lusso-saigon-4pn-1536x864.webp">
+            </div>
+            <div class="mt-8 text-center">
+              <h4 class="font-headline text-2xl text-secondary italic">Căn hộ 4 Phòng Ngủ</h4>
+              <p class="text-xs text-on-surface-variant mt-2 font-light tracking-wider">Kiệt tác không gian vươn cao, khẳng định vị thế chủ nhân.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .tab-btn.active {
+        background: #eac24b; /* secondary */
+        color: #3d2f00; /* on-secondary */
+        box-shadow: 0 0 20px rgba(234, 194, 75, 0.3);
+      }
+    </style>
+
     <!-- TIẾN ĐỘ LUSSO SAIGON -->
     <section id="progress" class="py-32 px-12 bg-surface overflow-hidden">
       <div class="max-w-7xl mx-auto">
@@ -717,6 +959,17 @@
       </div>
     </div>
   </footer>
+
+  <!-- Fixed Contact Buttons -->
+  <div class="fixed-contact">
+    <a href="tel:0909364603" class="contact-btn call ring-anim" title="Gọi điện">
+      <img src="./images/phone.png" alt="Call Icon" class="w-8 h-8 object-contain" />
+    </a>
+    <a href="https://zalo.me/0909364603" target="_blank" class="contact-btn zalo ring-anim" style="animation-delay: 0.5s" title="Zalo">
+      <img src="./images/zalo.png" alt="Zalo Icon" class="w-10 h-10 object-contain" />
+    </a>
+  </div>
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const observerOptions = {
@@ -744,13 +997,30 @@
       const navMapping = {
         'hero': '#hero',
         'lifestyle': '#hero',
+        'location': '#location',
         'voyage': '#voyage',
         'all-in-one': '#differences',
         'differences': '#differences',
         'asset': '#differences',
         'model-house': '#model-house',
+        'floor-plan': '#floor-plan',
         'progress': '#progress',
         'signature': '#progress'
+      };
+
+      // Tab switching logic for floor plans
+      window.switchTab = (tabId) => {
+        // Update Buttons
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+          btn.classList.remove('active');
+        });
+        document.getElementById(`tab-${tabId}`).classList.add('active');
+
+        // Update Contents
+        document.querySelectorAll('.tab-content').forEach(content => {
+          content.classList.add('hidden');
+        });
+        document.getElementById(`content-${tabId}`).classList.remove('hidden');
       };
 
       const updateActiveNav = () => {
