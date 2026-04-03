@@ -7,24 +7,44 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18054003982"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'AW-18054003982');
   </script>
-  
+
+  <!-- Event snippet for Người liên hệ conversion page
+  In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+  <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof (url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18054003982/rONRCK_h-pQcEI766KBD',
+        'event_callback': callback
+      });
+      return false;
+    }
+  </script>
+
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Lusso Saigon | The Vertical Voyage</title>
-  <meta name="description" content="Lusso Saigon - Một kiệt tác vươn cao giữa lòng Sài Gòn. Nơi sự xa hoa đạt đến tầng cao mới và đường chân trời trở thành không gian riêng tư của bạn." />
-  <meta name="keywords" content="Lusso Saigon, Vertial Voyage, Bất động sản cao cấp, Căn hộ Sài Gòn, Luxury Residences" />
+  <meta name="description"
+    content="Lusso Saigon - Một kiệt tác vươn cao giữa lòng Sài Gòn. Nơi sự xa hoa đạt đến tầng cao mới và đường chân trời trở thành không gian riêng tư của bạn." />
+  <meta name="keywords"
+    content="Lusso Saigon, Vertial Voyage, Bất động sản cao cấp, Căn hộ Sài Gòn, Luxury Residences" />
   <link rel="icon" href="./images/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="./images/banner.webp" fetchpriority="high">
   <!-- Open Graph -->
   <meta property="og:title" content="Lusso Saigon | The Vertical Voyage" />
-  <meta property="og:description" content="Một kiệt tác vươn cao giữa lòng Sài Gòn, nơi sự xa hoa đạt đến tầng cao mới." />
+  <meta property="og:description"
+    content="Một kiệt tác vươn cao giữa lòng Sài Gòn, nơi sự xa hoa đạt đến tầng cao mới." />
   <meta property="og:image" content="https://lussosaigonresidences.com/images/thumb-lusso.webp" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -206,13 +226,33 @@
     }
 
     @keyframes ring {
-      0% { transform: rotate(0deg) scale(1); }
-      5% { transform: rotate(15deg) scale(1.1); }
-      10% { transform: rotate(-15deg) scale(1.1); }
-      15% { transform: rotate(15deg) scale(1.1); }
-      20% { transform: rotate(-15deg) scale(1.1); }
-      25% { transform: rotate(0deg) scale(1.1); }
-      100% { transform: rotate(0deg) scale(1.1); }
+      0% {
+        transform: rotate(0deg) scale(1);
+      }
+
+      5% {
+        transform: rotate(15deg) scale(1.1);
+      }
+
+      10% {
+        transform: rotate(-15deg) scale(1.1);
+      }
+
+      15% {
+        transform: rotate(15deg) scale(1.1);
+      }
+
+      20% {
+        transform: rotate(-15deg) scale(1.1);
+      }
+
+      25% {
+        transform: rotate(0deg) scale(1.1);
+      }
+
+      100% {
+        transform: rotate(0deg) scale(1.1);
+      }
     }
 
     .ring-anim {
@@ -231,8 +271,15 @@
     }
 
     @keyframes pulse-out {
-      0% { transform: scale(1); opacity: 0.8; }
-      100% { transform: scale(1.6); opacity: 0; }
+      0% {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: scale(1.6);
+        opacity: 0;
+      }
     }
   </style>
 </head>
@@ -241,7 +288,8 @@
   <!-- TopAppBar -->
   <nav class="fixed top-0 w-full z-50 bg-stone-950/40 backdrop-blur-2xl shadow-2xl shadow-rose-950/20">
     <div class="flex justify-between items-center w-full px-12 py-8 max-w-[1920px] mx-auto">
-      <a href="#hero"><img src="./images/logo.webp" alt="Lusso Saigon" class="h-10 object-contain" decoding="async" /></a>
+      <a href="#hero"><img src="./images/logo.webp" alt="Lusso Saigon" class="h-10 object-contain"
+          decoding="async" /></a>
       <div class="hidden md:flex items-center gap-12">
         <a class="nav-link text-stone-300 font-sans tracking-[0.2em] text-[10px] uppercase hover:text-amber-200 transition-colors duration-500"
           href="#hero">Về Lusso</a>
@@ -256,7 +304,7 @@
         <a class="nav-link text-stone-300 font-sans tracking-[0.2em] text-[10px] uppercase hover:text-amber-200 transition-colors duration-500"
           href="#progress">Tiến độ</a>
       </div>
-      <a href="https://zalo.me/0909364603" target="_blank"
+      <a href="https://zalo.me/0909364603" onclick="return gtag_report_conversion('https://zalo.me/0909364603');"
         class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-3 rounded-none text-xs tracking-widest uppercase font-label scale-98 active:opacity-80 transition-transform inline-block">
         Nhận báo giá
       </a>
@@ -295,13 +343,16 @@
           <div class="grid grid-cols-2 gap-4">
             <div class="space-y-4">
               <img loading="lazy" decoding="async" class="w-full aspect-[4/5] object-cover rounded-sm reveal"
-                alt="Grand hotel foyer with crystal chandelier" loading="lazy" decoding="async" src="./images/view.webp" />
+                alt="Grand hotel foyer with crystal chandelier" loading="lazy" decoding="async"
+                src="./images/view.webp" />
               <img loading="lazy" decoding="async" class="w-full aspect-square object-cover rounded-sm reveal delay-200"
-                alt="International diplomatic conference meeting room" loading="lazy" decoding="async" src="./images/view-1.webp" />
+                alt="International diplomatic conference meeting room" loading="lazy" decoding="async"
+                src="./images/view-1.webp" />
             </div>
             <div class="space-y-4 pt-12">
               <img loading="lazy" decoding="async" class="w-full aspect-[4/6] object-cover rounded-sm reveal delay-100"
-                alt="High-end lifestyle details, champagne and city view" loading="lazy" decoding="async" src="./images/view-2.webp" />
+                alt="High-end lifestyle details, champagne and city view" loading="lazy" decoding="async"
+                src="./images/view-2.webp" />
               <div class="glass-panel p-6 border-l-2 border-secondary reveal delay-300">
                 <h3 class="font-headline text-lg text-secondary mb-2 italic">Tâm điểm thượng lưu</h3>
                 <p class="font-body text-[10px] text-on-surface-variant leading-relaxed">Nơi những chính khách và tầng
@@ -348,17 +399,20 @@
         <div class="grid lg:grid-cols-2 gap-20 items-center">
           <div class="space-y-12 reveal">
             <div>
-              <span class="font-label text-secondary tracking-[0.5em] uppercase text-xs mb-4 block">Central Connectivity</span>
+              <span class="font-label text-secondary tracking-[0.5em] uppercase text-xs mb-4 block">Central
+                Connectivity</span>
               <h2 class="font-headline text-6xl text-on-background tracking-tighter italic">Vị trí chiến lược</h2>
               <div class="vertical-passage h-12 mt-10"></div>
             </div>
             <div class="space-y-8">
               <p class="font-body text-lg text-on-surface-variant font-light leading-relaxed">
-                Tọa lạc tại tâm điểm giao thoa giữa các trục đại lộ huyết mạch, Lusso Saigon sở hữu vị thế độc bản kết nối trực tiếp đến mọi khu vực trọng điểm của thành phố trong tích tắc.
+                Tọa lạc tại tâm điểm giao thoa giữa các trục đại lộ huyết mạch, Lusso Saigon sở hữu vị thế độc bản kết
+                nối trực tiếp đến mọi khu vực trọng điểm của thành phố trong tích tắc.
               </p>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div class="flex items-center gap-4 group">
-                  <div class="w-12 h-12 rounded-full border border-secondary/30 flex items-center justify-center group-hover:bg-secondary/10 transition-colors">
+                  <div
+                    class="w-12 h-12 rounded-full border border-secondary/30 flex items-center justify-center group-hover:bg-secondary/10 transition-colors">
                     <span class="material-symbols-outlined text-secondary">explore</span>
                   </div>
                   <div>
@@ -367,7 +421,8 @@
                   </div>
                 </div>
                 <div class="flex items-center gap-4 group">
-                  <div class="w-12 h-12 rounded-full border border-secondary/30 flex items-center justify-center group-hover:bg-secondary/10 transition-colors">
+                  <div
+                    class="w-12 h-12 rounded-full border border-secondary/30 flex items-center justify-center group-hover:bg-secondary/10 transition-colors">
                     <span class="material-symbols-outlined text-secondary">train</span>
                   </div>
                   <div>
@@ -376,7 +431,8 @@
                   </div>
                 </div>
                 <div class="flex items-center gap-4 group">
-                  <div class="w-12 h-12 rounded-full border border-secondary/30 flex items-center justify-center group-hover:bg-secondary/10 transition-colors">
+                  <div
+                    class="w-12 h-12 rounded-full border border-secondary/30 flex items-center justify-center group-hover:bg-secondary/10 transition-colors">
                     <span class="material-symbols-outlined text-secondary">flight_takeoff</span>
                   </div>
                   <div>
@@ -385,7 +441,8 @@
                   </div>
                 </div>
                 <div class="flex items-center gap-4 group">
-                  <div class="w-12 h-12 rounded-full border border-secondary/30 flex items-center justify-center group-hover:bg-secondary/10 transition-colors">
+                  <div
+                    class="w-12 h-12 rounded-full border border-secondary/30 flex items-center justify-center group-hover:bg-secondary/10 transition-colors">
                     <span class="material-symbols-outlined text-secondary">shopping_cart</span>
                   </div>
                   <div>
@@ -405,11 +462,12 @@
           </div>
           <div class="relative reveal delay-200">
             <div class="glass-panel p-2 rounded-sm overflow-hidden border border-outline-variant/30 relative">
-              <img loading="lazy" decoding="async" class="w-full h-auto object-cover rounded-sm" alt="Bản đồ vị trí Lusso Saigon" 
-                   loading="lazy" decoding="async" src="./images/vi-tri-lusso-saigon-1536x863.webp">
+              <img loading="lazy" decoding="async" class="w-full h-auto object-cover rounded-sm"
+                alt="Bản đồ vị trí Lusso Saigon" loading="lazy" decoding="async"
+                src="./images/vi-tri-lusso-saigon-1536x863.webp">
               <!-- Accent pulse on the map if appropriate - visually simulated with CSS -->
               <div class="absolute top-[34%] right-[20%] -translate-x-1/2 -translate-y-1/2 w-8 h-8 pointer-events-none">
-                 <div class="absolute inset-0 bg-secondary rounded-full animate-ping opacity-70"></div>
+                <div class="absolute inset-0 bg-secondary rounded-full animate-ping opacity-70"></div>
               </div>
             </div>
             <div class="absolute -bottom-10 -right-10 w-48 h-48 border-r border-b border-secondary/20 -z-0"></div>
@@ -428,8 +486,10 @@
         <!-- Luxury Arrival Experience -->
         <div class="grid md:grid-cols-4 gap-6 mb-32">
           <div class="group relative aspect-[3/4] overflow-hidden reveal">
-            <img loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              alt="Grand entrance sảnh đón sang trọng" loading="lazy" decoding="async" src="./images/grand-lobby.webp" />
+            <img loading="lazy" decoding="async"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              alt="Grand entrance sảnh đón sang trọng" loading="lazy" decoding="async"
+              src="./images/grand-lobby.webp" />
             <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
             <div class="absolute bottom-6 left-6 right-6">
               <span class="material-symbols-outlined text-secondary mb-2">meeting_room</span>
@@ -438,7 +498,8 @@
             </div>
           </div>
           <div class="group relative aspect-[3/4] overflow-hidden reveal delay-100">
-            <img loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            <img loading="lazy" decoding="async"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               alt="Lobby lounge 5 star waiting area" src="./images/grand-lobby-1.webp" />
             <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
             <div class="absolute bottom-6 left-6 right-6">
@@ -448,7 +509,8 @@
             </div>
           </div>
           <div class="group relative aspect-[3/4] overflow-hidden reveal delay-200">
-            <img loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            <img loading="lazy" decoding="async"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               alt="High-speed elevator lobby with marble" src="./images/img553.webp" />
             <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
             <div class="absolute bottom-6 left-6 right-6">
@@ -458,7 +520,8 @@
             </div>
           </div>
           <div class="group relative aspect-[3/4] overflow-hidden reveal delay-300">
-            <img loading="lazy" decoding="async" class="w-full h-full object-cover object-right transition-transform duration-700 group-hover:scale-110"
+            <img loading="lazy" decoding="async"
+              class="w-full h-full object-cover object-right transition-transform duration-700 group-hover:scale-110"
               alt="Modern high-end entertainment facility" src="./images/img626.webp" />
             <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
             <div class="absolute bottom-6 left-6 right-6">
@@ -471,7 +534,8 @@
         <div class="grid md:grid-cols-3 gap-12">
           <!-- Station 1 -->
           <div class="group relative overflow-hidden aspect-[4/6] reveal">
-            <img loading="lazy" decoding="async" class="w-full h-full object-cover lg:saturate-[0.4] lg:brightness-75 lg:group-hover:saturate-100 lg:group-hover:brightness-100 lg:group-hover:scale-105 transition-all duration-700"
+            <img loading="lazy" decoding="async"
+              class="w-full h-full object-cover lg:saturate-[0.4] lg:brightness-75 lg:group-hover:saturate-100 lg:group-hover:brightness-100 lg:group-hover:scale-105 transition-all duration-700"
               alt="Luxury commercial retail space interior" src="./images/img682.webp" />
             <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/20 to-transparent"></div>
             <div class="absolute bottom-10 left-10 right-10">
@@ -484,7 +548,8 @@
           </div>
           <!-- Station 2 -->
           <div class="group relative overflow-hidden aspect-[4/6] md:translate-y-12 reveal delay-200">
-            <img loading="lazy" decoding="async" class="w-full h-full object-cover lg:saturate-[0.4] lg:brightness-75 lg:group-hover:saturate-100 lg:group-hover:brightness-100 lg:group-hover:scale-105 transition-all duration-700"
+            <img loading="lazy" decoding="async"
+              class="w-full h-full object-cover lg:saturate-[0.4] lg:brightness-75 lg:group-hover:saturate-100 lg:group-hover:brightness-100 lg:group-hover:scale-105 transition-all duration-700"
               alt="Lush green sky garden oasis in a high-rise" src="./images/img608.webp" />
             <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/20 to-transparent"></div>
             <div class="absolute bottom-10 left-10 right-10">
@@ -497,7 +562,8 @@
           </div>
           <!-- Station 3 -->
           <div class="group relative overflow-hidden aspect-[4/6] md:translate-y-24 reveal delay-400">
-            <img loading="lazy" decoding="async" class="w-full h-full object-cover lg:saturate-[0.4] lg:brightness-75 lg:group-hover:saturate-100 lg:group-hover:brightness-100 lg:group-hover:scale-105 transition-all duration-700"
+            <img loading="lazy" decoding="async"
+              class="w-full h-full object-cover lg:saturate-[0.4] lg:brightness-75 lg:group-hover:saturate-100 lg:group-hover:brightness-100 lg:group-hover:scale-105 transition-all duration-700"
               alt="Rooftop infinity pool with skyline view" src="./images/img630.webp" />
             <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/20 to-transparent"></div>
             <div class="absolute bottom-10 left-10 right-10">
@@ -516,7 +582,8 @@
       <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-start">
         <div class="space-y-24">
           <div class="grid grid-cols-2 gap-4">
-            <img loading="lazy" decoding="async" class="w-full aspect-square object-cover rounded-sm border border-outline-variant/30 reveal"
+            <img loading="lazy" decoding="async"
+              class="w-full aspect-square object-cover rounded-sm border border-outline-variant/30 reveal"
               alt="Minimalist luxury bedroom interior" src="./images/img691.webp" />
             <img
               class="w-full aspect-square object-cover rounded-sm border border-outline-variant/30 mt-8 reveal delay-200"
@@ -537,9 +604,11 @@
                 một tiểu đô thị thượng lưu khép kín.
               </p>
             </div>
-            <img loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover rounded-sm border border-outline-variant/30 reveal delay-100"
+            <img loading="lazy" decoding="async"
+              class="w-full aspect-[4/3] object-cover rounded-sm border border-outline-variant/30 reveal delay-100"
               alt="Smart city urban connectivity view" src="./images/img703.webp" />
-            <img loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover rounded-sm border border-outline-variant/30 reveal delay-300"
+            <img loading="lazy" decoding="async"
+              class="w-full aspect-[4/3] object-cover rounded-sm border border-outline-variant/30 reveal delay-300"
               alt="Luxury spa and wellness center" src="./images/img715.webp" />
           </div>
         </div>
@@ -744,30 +813,38 @@
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           <!-- Column 1 -->
           <div class="space-y-4 md:space-y-6">
-            <img loading="lazy" decoding="async" class="w-full aspect-[3/4] object-cover rounded-sm reveal hover:scale-[1.02] transition-transform duration-700"
+            <img loading="lazy" decoding="async"
+              class="w-full aspect-[3/4] object-cover rounded-sm reveal hover:scale-[1.02] transition-transform duration-700"
               alt="Lusso Saigon model house interior" src="./images/nha-mau-lusso-saigon-1.webp" />
-            <img loading="lazy" decoding="async" class="w-full aspect-square object-cover rounded-sm reveal delay-100 hover:scale-[1.02] transition-transform duration-700"
+            <img loading="lazy" decoding="async"
+              class="w-full aspect-square object-cover rounded-sm reveal delay-100 hover:scale-[1.02] transition-transform duration-700"
               alt="Lusso Saigon model house living room" src="./images/nha-mau-lusso-saigon-2.webp" />
           </div>
           <!-- Column 2 -->
           <div class="space-y-4 md:space-y-6 lg:pt-12">
-            <img loading="lazy" decoding="async" class="w-full aspect-square object-cover rounded-sm reveal delay-200 hover:scale-[1.02] transition-transform duration-700"
+            <img loading="lazy" decoding="async"
+              class="w-full aspect-square object-cover rounded-sm reveal delay-200 hover:scale-[1.02] transition-transform duration-700"
               alt="Lusso Saigon model house bedroom" src="./images/nha-mau-lusso-saigon-3.webp" />
-            <img loading="lazy" decoding="async" class="w-full aspect-[3/4] object-cover rounded-sm reveal delay-300 hover:scale-[1.02] transition-transform duration-700"
+            <img loading="lazy" decoding="async"
+              class="w-full aspect-[3/4] object-cover rounded-sm reveal delay-300 hover:scale-[1.02] transition-transform duration-700"
               alt="Lusso Saigon model house kitchen" src="./images/nha-mau-lusso-saigon-4.webp" />
           </div>
           <!-- Column 3 -->
           <div class="space-y-4 md:space-y-6">
-            <img loading="lazy" decoding="async" class="w-full aspect-[3/4] object-cover rounded-sm reveal delay-400 hover:scale-[1.02] transition-transform duration-700"
+            <img loading="lazy" decoding="async"
+              class="w-full aspect-[3/4] object-cover rounded-sm reveal delay-400 hover:scale-[1.02] transition-transform duration-700"
               alt="Lusso Saigon model house interior detail" src="./images/nha-mau-lusso-saigon-5.webp" />
-            <img loading="lazy" decoding="async" class="w-full aspect-square object-cover rounded-sm reveal delay-500 hover:scale-[1.02] transition-transform duration-700"
+            <img loading="lazy" decoding="async"
+              class="w-full aspect-square object-cover rounded-sm reveal delay-500 hover:scale-[1.02] transition-transform duration-700"
               alt="Lusso Saigon model house bathroom" src="./images/nha-mau-lusso-saigon-6.webp" />
           </div>
           <!-- Column 4 -->
           <div class="space-y-4 md:space-y-6 lg:pt-12">
-            <img loading="lazy" decoding="async" class="w-full aspect-square object-cover rounded-sm reveal delay-300 hover:scale-[1.02] transition-transform duration-700"
+            <img loading="lazy" decoding="async"
+              class="w-full aspect-square object-cover rounded-sm reveal delay-300 hover:scale-[1.02] transition-transform duration-700"
               alt="Lusso Saigon model house master bedroom" src="./images/nha-mau-lusso-saigon-7.webp" />
-            <img loading="lazy" decoding="async" class="w-full aspect-[3/4] object-cover rounded-sm reveal delay-400 hover:scale-[1.02] transition-transform duration-700"
+            <img loading="lazy" decoding="async"
+              class="w-full aspect-[3/4] object-cover rounded-sm reveal delay-400 hover:scale-[1.02] transition-transform duration-700"
               alt="Lusso Saigon model house balcony view" src="./images/nha-mau-lusso-saigon-8.webp" />
           </div>
         </div>
@@ -799,13 +876,16 @@
         <div class="max-w-5xl mx-auto reveal delay-200">
           <!-- 1PN -->
           <div id="content-1pn" class="tab-content block">
-            <div class="relative group aspect-video overflow-hidden rounded-sm border border-outline-variant/20 bg-stone-900/40">
-              <img loading="lazy" decoding="async" class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700" alt="Mặt bằng 1 phòng ngủ" 
-                   src="./images/can-ho-lusso-saigon-1pn-1536x864.webp">
+            <div
+              class="relative group aspect-video overflow-hidden rounded-sm border border-outline-variant/20 bg-stone-900/40">
+              <img loading="lazy" decoding="async"
+                class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700"
+                alt="Mặt bằng 1 phòng ngủ" src="./images/can-ho-lusso-saigon-1pn-1536x864.webp">
             </div>
             <div class="mt-8 text-center">
               <h4 class="font-headline text-2xl text-secondary italic">Căn hộ 1 Phòng Ngủ</h4>
-              <p class="text-xs text-on-surface-variant mt-2 font-light tracking-wider">Không gian sống tinh khôi và tối giản cho nhịp sống hiện đại.</p>
+              <p class="text-xs text-on-surface-variant mt-2 font-light tracking-wider">Không gian sống tinh khôi và tối
+                giản cho nhịp sống hiện đại.</p>
             </div>
           </div>
 
@@ -814,46 +894,57 @@
             <div class="grid md:grid-cols-2 gap-8">
               <div class="space-y-4">
                 <div class="aspect-video overflow-hidden rounded-sm border border-outline-variant/20 bg-stone-900/40">
-                  <img loading="lazy" decoding="async" class="w-full h-full object-contain p-4 hover:scale-105 transition-transform duration-700" alt="Mặt bằng 2 phòng ngủ 1WC" 
-                       src="./images/can-ho-lusso-saigon-2pn-1wc-768x432.webp">
+                  <img loading="lazy" decoding="async"
+                    class="w-full h-full object-contain p-4 hover:scale-105 transition-transform duration-700"
+                    alt="Mặt bằng 2 phòng ngủ 1WC" src="./images/can-ho-lusso-saigon-2pn-1wc-768x432.webp">
                 </div>
-                <p class="text-center text-[10px] uppercase tracking-widest text-secondary font-label">Phiên bản 01 (1WC)</p>
+                <p class="text-center text-[10px] uppercase tracking-widest text-secondary font-label">Phiên bản 01
+                  (1WC)</p>
               </div>
               <div class="space-y-4">
                 <div class="aspect-video overflow-hidden rounded-sm border border-outline-variant/20 bg-stone-900/40">
-                  <img loading="lazy" decoding="async" class="w-full h-full object-contain p-4 hover:scale-105 transition-transform duration-700" alt="Mặt bằng 2 phòng ngủ 2WC" 
-                       src="./images/can-ho-lusso-saigon-2pn-2wc-768x432.webp">
+                  <img loading="lazy" decoding="async"
+                    class="w-full h-full object-contain p-4 hover:scale-105 transition-transform duration-700"
+                    alt="Mặt bằng 2 phòng ngủ 2WC" src="./images/can-ho-lusso-saigon-2pn-2wc-768x432.webp">
                 </div>
-                <p class="text-center text-[10px] uppercase tracking-widest text-secondary font-label">Phiên bản 02 (2WC)</p>
+                <p class="text-center text-[10px] uppercase tracking-widest text-secondary font-label">Phiên bản 02
+                  (2WC)</p>
               </div>
             </div>
             <div class="mt-12 text-center">
               <h4 class="font-headline text-2xl text-secondary italic">Căn hộ 2 Phòng Ngủ</h4>
-              <p class="text-xs text-on-surface-variant mt-2 font-light tracking-wider">Sự cân bằng hoàn hảo giữa riêng tư và gắn kết gia đình.</p>
+              <p class="text-xs text-on-surface-variant mt-2 font-light tracking-wider">Sự cân bằng hoàn hảo giữa riêng
+                tư và gắn kết gia đình.</p>
             </div>
           </div>
 
           <!-- 3PN -->
           <div id="content-3pn" class="tab-content hidden">
-            <div class="relative group aspect-video overflow-hidden rounded-sm border border-outline-variant/20 bg-stone-900/40">
-              <img loading="lazy" decoding="async" class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700" alt="Mặt bằng 3 phòng ngủ" 
-                   src="./images/can-ho-lusso-saigon-3pn-1536x864.webp">
+            <div
+              class="relative group aspect-video overflow-hidden rounded-sm border border-outline-variant/20 bg-stone-900/40">
+              <img loading="lazy" decoding="async"
+                class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700"
+                alt="Mặt bằng 3 phòng ngủ" src="./images/can-ho-lusso-saigon-3pn-1536x864.webp">
             </div>
             <div class="mt-8 text-center">
               <h4 class="font-headline text-2xl text-secondary italic">Căn hộ 3 Phòng Ngủ</h4>
-              <p class="text-xs text-on-surface-variant mt-2 font-light tracking-wider">Định nghĩa lại không gian sống đẳng cấp cho gia đình đa thế hệ.</p>
+              <p class="text-xs text-on-surface-variant mt-2 font-light tracking-wider">Định nghĩa lại không gian sống
+                đẳng cấp cho gia đình đa thế hệ.</p>
             </div>
           </div>
 
           <!-- 4PN -->
           <div id="content-4pn" class="tab-content hidden">
-            <div class="relative group aspect-video overflow-hidden rounded-sm border border-outline-variant/20 bg-stone-900/40">
-              <img loading="lazy" decoding="async" class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700" alt="Mặt bằng 4 phòng ngủ" 
-                   src="./images/can-ho-lusso-saigon-4pn-1536x864.webp">
+            <div
+              class="relative group aspect-video overflow-hidden rounded-sm border border-outline-variant/20 bg-stone-900/40">
+              <img loading="lazy" decoding="async"
+                class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700"
+                alt="Mặt bằng 4 phòng ngủ" src="./images/can-ho-lusso-saigon-4pn-1536x864.webp">
             </div>
             <div class="mt-8 text-center">
               <h4 class="font-headline text-2xl text-secondary italic">Căn hộ 4 Phòng Ngủ</h4>
-              <p class="text-xs text-on-surface-variant mt-2 font-light tracking-wider">Kiệt tác không gian vươn cao, khẳng định vị thế chủ nhân.</p>
+              <p class="text-xs text-on-surface-variant mt-2 font-light tracking-wider">Kiệt tác không gian vươn cao,
+                khẳng định vị thế chủ nhân.</p>
             </div>
           </div>
         </div>
@@ -862,8 +953,10 @@
 
     <style>
       .tab-btn.active {
-        background: #eac24b; /* secondary */
-        color: #3d2f00; /* on-secondary */
+        background: #eac24b;
+        /* secondary */
+        color: #3d2f00;
+        /* on-secondary */
         box-shadow: 0 0 20px rgba(234, 194, 75, 0.3);
       }
     </style>
@@ -878,7 +971,8 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="group relative overflow-hidden reveal">
-            <img loading="lazy" decoding="async" class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-110"
+            <img loading="lazy" decoding="async"
+              class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-110"
               alt="Construction progress March 2026" src="./images/tien-do-lusso-saigon-1.webp" />
             <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80"></div>
             <div class="absolute bottom-6 left-6">
@@ -887,7 +981,8 @@
             </div>
           </div>
           <div class="group relative overflow-hidden reveal delay-100">
-            <img loading="lazy" decoding="async" class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-110"
+            <img loading="lazy" decoding="async"
+              class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-110"
               alt="Construction progress March 2026" src="./images/tien-do-lusso-saigon-2.webp" />
             <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80"></div>
             <div class="absolute bottom-6 left-6">
@@ -896,7 +991,8 @@
             </div>
           </div>
           <div class="group relative overflow-hidden reveal delay-200">
-            <img loading="lazy" decoding="async" class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-110"
+            <img loading="lazy" decoding="async"
+              class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-110"
               alt="Construction progress March 2026" src="./images/tien-do-lusso-saigon-3.webp" />
             <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80"></div>
             <div class="absolute bottom-6 left-6">
@@ -905,7 +1001,8 @@
             </div>
           </div>
           <div class="group relative overflow-hidden reveal delay-300">
-            <img loading="lazy" decoding="async" class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-110"
+            <img loading="lazy" decoding="async"
+              class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-110"
               alt="Construction progress March 2026" src="./images/tien-do-lusso-saigon-4.webp" />
             <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80"></div>
             <div class="absolute bottom-6 left-6">
@@ -965,9 +1062,22 @@
       <div class="text-right space-y-4">
         <p class="font-serif text-sm italic text-stone-500">© 2026 Lusso Saigon. A Vertical Voyage by WorldHotels.</p>
         <div class="flex justify-end gap-6 text-amber-400">
-          <a href="tel:0909364603"><span class="material-symbols-outlined cursor-pointer hover:scale-110 transition-transform" title="Gọi điện">call</span></a>
-          <a href="https://zalo.me/0909364603" target="_blank"><span class="material-symbols-outlined cursor-pointer hover:scale-110 transition-transform" title="Zalo">chat</span></a>
-          <a href="mailto:caonguyenthuthao630@gmail.com"><span class="material-symbols-outlined cursor-pointer hover:scale-110 transition-transform" title="Email">mail</span></a>
+          <a href="tel:0909364603" onclick="return gtag_report_conversion('tel:0909364603');">
+            <span class="material-symbols-outlined cursor-pointer hover:scale-110 transition-transform"
+              title="Gọi điện">call</span>
+          </a>
+
+          <a href="https://zalo.me/0909364603" target="_blank"
+            onclick="return gtag_report_conversion('https://zalo.me/0909364603');">
+            <span class="material-symbols-outlined cursor-pointer hover:scale-110 transition-transform"
+              title="Zalo">chat</span>
+          </a>
+
+          <a href="mailto:caonguyenthuthao630@gmail.com"
+            onclick="return gtag_report_conversion('mailto:caonguyenthuthao630@gmail.com');">
+            <span class="material-symbols-outlined cursor-pointer hover:scale-110 transition-transform"
+              title="Email">mail</span>
+          </a>
         </div>
       </div>
     </div>
@@ -975,10 +1085,13 @@
 
   <!-- Fixed Contact Buttons -->
   <div class="fixed-contact">
-    <a href="tel:0909364603" class="contact-btn call ring-anim" title="Gọi điện">
+    <a href="tel:0909364603" onclick="return gtag_report_conversion('tel:0909364603');"
+      class="contact-btn call ring-anim" title="Gọi điện">
       <img loading="lazy" decoding="async" src="./images/phone.png" alt="Call Icon" class="w-8 h-8 object-contain" />
     </a>
-    <a href="https://zalo.me/0909364603" target="_blank" class="contact-btn zalo ring-anim" style="animation-delay: 0.5s" title="Zalo">
+
+    <a href="https://zalo.me/0909364603" onclick="return gtag_report_conversion('https://zalo.me/0909364603');"
+      class="contact-btn zalo ring-anim" style="animation-delay: 0.5s" title="Zalo">
       <img loading="lazy" decoding="async" src="./images/zalo.png" alt="Zalo Icon" class="w-10 h-10 object-contain" />
     </a>
   </div>
